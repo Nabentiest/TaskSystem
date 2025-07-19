@@ -1,0 +1,50 @@
+/* app/assets/stylesheets/app.css */
+
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 1em;
+}
+
+h1, h2 {
+  color: #333;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 1em;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+form {
+  margin-top: 2em;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 0.5em 1.5em;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #005f99;
+}

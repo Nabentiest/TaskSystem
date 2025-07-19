@@ -1,0 +1,12 @@
+<h1>新しいタスク</h1>
+
+<%= form_with model: @task, local: true do |form| %>
+  <div>
+    <%= form.label :name, "タスク名" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.submit "作成" %>
+  </div>
+<% end %>

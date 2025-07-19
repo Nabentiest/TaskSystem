@@ -1,0 +1,25 @@
+<h1><%= @task.name %></h1>
+
+<h2>子タスク</h2>
+<ul>
+  <% @subtasks.each do |subtask| %>
+    <li>
+      <%= link_to subtask.name, task_path(subtask) %>
+      <%= link_to "削除", task_path(subtask), method: :delete, data: { confirm: "削除しますか？" } %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>子タスクを追加</h2>
+<%= form_with model: Task.new, url: create_subtask_task_path(@task), local: true do |form| %>
+  <div>
+    <%= form.label :name, "子タスク名" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.submit "追加" %>
+  </div>
+<% end %>
+
+<%= link_to "← 戻る", tasks_path %>
+<%= link_to "このタスクを削除", task_path(@task), method: :delete, data: { confirm: "本当に削除しますか？" } %>
