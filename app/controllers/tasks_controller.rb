@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = Task.includes(:child_tasks)
   end
 
   def show
@@ -14,11 +14,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-
     if @task.save
-      redirect_to @task
+      redirect_to tasks_path, notice: "タスクを追加しました"
     else
-      render :new
+      @tasks = Task.where.missing(:parent_tasks)
+      render :index, status: :unprocessable_entity
     end
   end
 

@@ -1,6 +1,9 @@
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
-import "@rails/ujs"
-import Rails from "@rails/ujs"
+import "@hotwired/stimulus-loading"
+import { application } from "@hotwired/stimulus"
+import TaskToggleController from "./controllers/task_toggle_controller"
 
-Rails.start()
+import "@hotwired/stimulus"
+import "@hotwired/stimulus-loading"
+
+
+application.register("task-toggle", TaskToggleController)

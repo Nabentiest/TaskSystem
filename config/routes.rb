@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :tasks, only: [:index, :show, :new, :create, :destroy] do
-    post 'create_subtask', on: :member
+  resources :tasks do
+    post :create_subtask, on: :member
   end
 
   root "tasks#index"

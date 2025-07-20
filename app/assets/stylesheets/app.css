@@ -48,3 +48,12 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #005f99;
 }
+
+div.task {
+  margin-bottom: 4px;
+}
+
+div.task.level-0 { margin-left: 0; }
+div.task.level-1 { margin-left: 1em; }
+div.task.level-2 { margin-left: 2em; }
+
